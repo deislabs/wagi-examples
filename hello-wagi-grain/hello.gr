@@ -1,0 +1,13 @@
+import Process from "sys/process"
+import Array from "array"
+
+print("content-type: text/plain\n")
+
+// This will print all the Wagi env variable
+print("==== Environment: ====")
+Array.forEach( print, Process.env() )
+
+// This will print the route path followed by each query
+// param. So /foo?bar=baz will be ["/foo", "bar=baz"].
+print("==== Args: ====")
+Array.forEach( print, Process.argv())
